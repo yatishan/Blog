@@ -1,7 +1,7 @@
 <div class="header_main">
     <div class="mobile_menu">
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div style="text-align: center" class="logo_mobile"><a href="index.html"><img src="images/logo.png" ></a></div>
+          <div style="" class="logo_mobile"><a href="index.html"><img src="images/logo.png" ></a></div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -40,6 +40,8 @@
 
                     </x-app-layout>
                    </li>
+                <li><a href="{{ route('create_post') }}">Create Post</a></li>
+
                     @else
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>

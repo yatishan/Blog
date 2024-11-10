@@ -23,6 +23,11 @@ Route::get('/show_page',[AdminController::class,'show_page'])->name('show_page')
 Route::get('/delete_page/{id}',[AdminController::class,'delete_page'])->name('delete_page');
 Route::get('/edit_page/{id}',[AdminController::class,'edit_page'])->name('edit_page');
 Route::put('/update_page/{id}',[AdminController::class,'update_page'])->name('update_page');
+Route::get('/page_details/{id}',[HomeController::class,'page_details'])->name('page_details');
+Route::get('/create_post',[HomeController::class,'create_post'])->middleware('auth')->name('create_post');
+Route::post('/add_post',[HomeController::class,'add_post'])->name('add_post');
+
+
 
 
 
