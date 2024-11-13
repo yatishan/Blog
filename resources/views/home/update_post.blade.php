@@ -15,8 +15,8 @@
     </div>
 
     <div class="col-md-6" style="margin:auto;">
-        <h2 style="text-align: center; font-size:30px;">Add Post</h2>
-        <form action="{{ route('add_post') }}" method="post" enctype="multipart/form-data">
+        <h2 style="text-align: center; font-size:30px;">Update Post</h2>
+        <form action="{{ route('my_post_edit',$post->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @if (session('success'))
               <div class="alert alert-success mt-5" role="alert">
@@ -34,18 +34,21 @@
             @endif
             <div class="mt-2" >
                 <lable class="form-lable" for="title">Post Title</lable>
-                <input type="text" name="title" id="title" value="{{ old('title') }}" class="form-control" style="border-radius:5px;">
+                <input type="text" name="title" id="title" value="{{ old('title',$post->title) }}" class="form-control" style="border-radius:5px;">
             </div>
             <div class="mt-5">
                 <lable class="form-lable" for="description">Post Description</lable>
-                <textarea name="description" class="form-control" style="border-radius:5px;">{{ old('description') }}</textarea>
+                <textarea name="description" class="form-control" style="border-radius:5px;">{{ old('description',$post->description) }}</textarea>
             </div>
             <div class="mt-5">
                 <lable class="form-lable" for="image">Post Image</lable>
                 <input type="file" name="image" id="image" class="form-control">
             </div>
             <div class="mt-3">
-                <button type="submit" class="btn btn-success">Add Post</button>
+                <img style="width: 100px; height:100px;" src="/storage/images/{{ $post->image}}" alt="">
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-success">Update Post</button>
             </div>
         </form>
     </div>

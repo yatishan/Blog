@@ -30,6 +30,9 @@
                     <th scope="col">Image</th>
                     <th scope="col">Delete</th>
                     <th scope="col">Edit</th>
+                    <th scope="col">Status Accept</th>
+                    <th scope="col">Status Reject</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -47,7 +50,13 @@
                         <a href="{{ route('delete_page',$post->id) }}" class="btn btn-danger" onclick="confirmation(event)">Delete</a>
                     </td>
                     <td>
-                        <a href="{{ route('edit_page',$post->id) }}" class="btn btn-danger">Edit</a>
+                        <a href="{{ route('edit_page',$post->id) }}" class="btn btn-success">Edit</a>
+                    </td>
+                    <td>
+                        <a href="{{ route('accept_page',$post->id) }}" class="btn btn-info">Accept</a>
+                    </td>
+                    <td>
+                        <a href="{{ route('reject_page',$post->id) }}" class="btn btn-warning">Reject</a>
                     </td>
                   </tr>
                 @endforeach

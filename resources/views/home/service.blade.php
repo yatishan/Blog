@@ -1,4 +1,4 @@
-<div class="services_section layout_padding">
+<div id="blog" class="services_section layout_padding">
     <div class="container">
        <h1 class="services_taital">Blogs </h1>
        <p class="services_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration</p>

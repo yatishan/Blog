@@ -11,28 +11,42 @@
                       <a class="nav-link" href="/">Home</a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link" href="about.html">About</a>
+                      <a class="nav-link" href="#">About</a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link " href="blog.html">Blog</a>
+                      <a class="nav-link " href="#blog">Blog</a>
+                   </li>
+                   @if (Route::has('login'))
+                   @auth
+                   <li class="nav-link">
+                    <x-app-layout>
+
+                    </x-app-layout>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link " href="{{ route('login') }}">Login</a>
-                   </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link " href="{{ route('create_post') }}">Create Post</a>
                  </li>
+                   @else
+                   <li class="nav-item">
+                    <a class="nav-link " href="{{ route('login') }}">Login</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="{{ route('register') }}">Register</a>
+                 </li>
+                   @endauth
+                   @endif
+
                 </ul>
              </div>
           </nav>
        </div>
        <div class="container-fluid">
-          <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+          <div style="display:flex; justify-content:center;" class="logo"><a href="/"><img src="images/logo.png"></a></div>
           <div class="menu_main">
              <ul>
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#blog">Blog</a></li>
                 @if (Route::has('login'))
                     @auth
                     <li>
@@ -40,6 +54,8 @@
 
                     </x-app-layout>
                    </li>
+                <li><a href="{{ route('my_post') }}">My Post</a></li>
+
                 <li><a href="{{ route('create_post') }}">Create Post</a></li>
 
                     @else

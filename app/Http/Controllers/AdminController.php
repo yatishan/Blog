@@ -73,5 +73,20 @@ class AdminController extends Controller
         $post->save();
         return back()->with('success','updated successfully');
     }
+
+    public function accept_page($id){
+        $post=Post::find($id);
+        $post->status="active";
+        $post->save();
+        return back()->with('success','Post status is successfully changed to active');
+    }
+
+    public function reject_page($id){
+        $post=Post::find($id);
+        $post->status="rejected";
+        $post->save();
+        return back()->with('success','Post status is successfully changed to reject');
+    }
+
 }
 
